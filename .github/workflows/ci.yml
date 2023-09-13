@@ -1,4 +1,4 @@
-name : wonna-park-toon CI
+name : wonna-park-toon CI Test
 
 on:
   pull_request:
@@ -13,7 +13,6 @@ defaults:
 jobs:
   test:
     runs-on: ubuntu-latest
-    environment: CI_Envirionment
     
     permissions:
      checks: write
@@ -23,6 +22,10 @@ jobs:
      - name: 레포지토리 체크아웃
        uses: actions/checkout@v3
 
+     - name: env 파일 생성
+       run: echo "hello" >> .env
+       working-directory: wnp-server/src/main/resources/static
+      
      - name: 그레이들 캐싱
        id: gradle-cache
        uses: actions/cache@v3
@@ -63,14 +66,4 @@ jobs:
        if: always()
        with:
          report_paths: '**/build/test-results/test/TEST-*.xml'
-
-     - name: CI가 종료되면 Slack으로 알림
-       uses: 8398a7/action-slack@v3
-       with:
-         status: ${{ job.status }}
-         author_name: 백엔드 빌드 실패 알림
-         fields: repo, message, commit, author, action, eventName, ref, workflow, job, took
-       env:
-         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-       if: always()
      
