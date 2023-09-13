@@ -11,4 +11,5 @@ public interface EpisodeRepository extends JpaRepository<Episode, Long> {
 
     boolean existsByWebtoonIdAndTitle(Long webtoonId, String title);
 
+
 }
