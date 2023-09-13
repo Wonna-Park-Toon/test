@@ -1,7 +1,7 @@
 spring:
   datasource:
     url: ${DATASOURCE_URL}
-    username: sa
+    username: ${DATASOURCE_USERNAME}
     password:
 
   h2:
