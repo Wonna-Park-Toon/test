@@ -14,7 +14,6 @@ else
     exit 1
 fi
 
-
 echo "> Start health check of WAS at 'http://127.0.0.1:${TARGET_PORT}' ..."
 
 for RETRY_COUNT in 1 2 3 4 5 6 7 8 9 10
@@ -29,5 +28,5 @@ do
         echo "> Health check failed."
         exit 1
     fi
-    sleep 10
+    sleep 5
 done
