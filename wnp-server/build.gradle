@@ -9,7 +9,7 @@ plugins {
 }
 
 group = 'com.wonnapark'
-version = '0.0.1-SNAPSHOT' + LocalDateTime.now().format("yyyyMMddHHmmss")
+version = '0.0.1-SNAPSHOT'
 
 java {
     sourceCompatibility = '17'
