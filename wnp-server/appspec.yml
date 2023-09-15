@@ -2,8 +2,9 @@ version: 0.0
 os: linux
 
 files:
-  - source: /
+  - source: / # 전체 파일을 의미
     destination: /home/ubuntu/wonnapark
+    overwrite: yes
 permissions:
   - object: /home/ubuntu/wonnapark
     owner: ubuntu

@@ -1,3 +1,5 @@
+import java.time.LocalDateTime
+
 plugins {
     id 'java'
     id 'org.springframework.boot' version '3.0.9'
@@ -7,7 +9,7 @@ plugins {
 }
 
 group = 'com.wonnapark'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1-SNAPSHOT' + LocalDateTime.now().format("yyyyMMddHHmmss")
 
 java {
     sourceCompatibility = '17'
