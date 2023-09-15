@@ -4,7 +4,7 @@ REPOSITORY=/home/ubuntu/wonnapark
 cd $REPOSITORY
 
 APP_NAME=wonnapark
-JAR_NAME=$(ls $REPOSITORY/build/libs/ | grep 'SNAPSHOT.jar' | tail -n 1)
+JAR_NAME=$(ls $REPOSITORY/build/libs/ | grep 'SNAPSHOT' | tail -n 1)
 JAR_PATH=$REPOSITORY/build/libs/$JAR_NAME
 
 CURRENT_PID=$(pgrep -f $APP_NAME)
